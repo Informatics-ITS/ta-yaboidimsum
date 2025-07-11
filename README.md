@@ -1,10 +1,10 @@
 # 🏁 Tugas Akhir (TA) - Final Project
 
-**Nama Mahasiswa**: [Nama Lengkap]  
-**NRP**: [Nomor Registrasi Pokok]  
-**Judul TA**: [Judul Tugas Akhir]  
-**Dosen Pembimbing**: [Nama Dosen]  
-**Dosen Ko-pembimbing**: [Nama Dosen]
+**Nama Mahasiswa**: Dimas Prihady Setyawan  
+**NRP**: 5025211184  
+**Judul TA**: PENERAPAN GENERATIVE ADVERSARIAL NETWORKS DALAM GENERASI DATA SINTETIS SEL DARAH PUTIH KASUS LEUKEMIA LIMFOBLASTIK AKUT DAN EVALUASI KINERJA MODEL KLASIFIKASI
+**Dosen Pembimbing**: Prof. Dr. Eng. Chastine Fatichah, S.Kom., M.Kom.  
+**Dosen Ko-pembimbing**: Aldinata Rizky Revanda, S.Kom., M.Kom.
 
 ---
 
