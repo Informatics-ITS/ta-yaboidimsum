@@ -123,24 +123,24 @@ Follow these steps to set up the environment and start the training process:
 
 8. **Execute the Training Process 💡**
 
-   Use the appropriate command to run the L1, L2, or L3 training process.
+   Use the appropriate command to run the L1, L2, or L3 training process. (Note on Command Syntax: If you encounter an error when executing the command, there might be an invisible character or formatting issue between `optimize` and` --outdir`. Simply delete the space and re-add it to resolve the issue.)
 
    **Command for Executing L1 Training**
 
    ```bash
-   python train-optuna.py optimize --outdir=./optuna_grid_results --data=./dataset/L1-Converted --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L1 --storage=sqlite:///optuna_grid_results/my_grid_L1_study.db --allow-tf32=True --nhwc=True
+   python train-optuna-TPESampler.py optimize --outdir=./optuna_grid_results --data=./dataset/L1-converted.zip --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L1 --storage=sqlite:///optuna_grid_results/L1/my_grid_L1_study.db --allow_tf32=True --nhwc=True
    ```
 
    **Command for Executing L2 Training**
 
    ```bash
-   python train-optuna.py optimize --outdir=./optuna_grid_results --data=./dataset/L2-converted.zip --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L2 --storage=sqlite:///optuna_grid_results/my_grid_L2_study.db --allow-tf32=True --nhwc=True
+   python train-optuna-TPESampler.py optimize --outdir=./optuna_grid_results --data=./dataset/L2-converted.zip --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L2 --storage=sqlite:///optuna_grid_results/L2/my_grid_L2_study.db --allow_tf32=True --nhwc=True
    ```
 
    **Command for Executing L3 Training**
 
    ```bash
-   python train-optuna.py optimize --outdir=./optuna_grid_results --data=./dataset/L3-Converted --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L3 --storage=sqlite:///optuna_grid_results/my_grid_L3_study.db --allow-tf32=True --nhwc=True
+   python train-optuna-TPESampler.py optimize --outdir=./optuna_grid_results --data=./dataset/L3-converted.zip --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L3 --storage=sqlite:///optuna_grid_results/L3/my_grid_L3_study.db --allow_tf32=True --nhwc=True
    ```
 
 ### 🖼️ Step-by-Step Guide to Generate Images
@@ -159,45 +159,35 @@ After the training is complete, follow these steps to generate images using the 
 
    Load the networks and generate the images using the commands below.
 
-
    **Baseline Networks**
 
    ```bash
-   !python generate.py --outdir=./hasil-output/noaug/L1 --trunc=0.7 --seeds=0-10 \
-    --network=./model-trained/model-noaug/L1-noaug-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/noaug/L1 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-noaug/L1-noaug-network-snapshot-001000.pkl
 
-   !python generate.py --outdir=./hasil-output/noaug/L2 --trunc=0.7 --seeds=0-10 \
-    --network=./model-trained/model-noaug/L2-noaug-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/noaug/L2 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-noaug/L2-noaug-network-snapshot-001000.pkl
 
-   !python generate.py --outdir=./hasil-output/noaug/L3 --trunc=0.7 --seeds=0-10 \
-    --network=./model-trained/model-noaug/L3-noaug-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/noaug/L3 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-noaug/L3-noaug-network-snapshot-001000.pkl
 
    ```
 
    **Baseline + ADA Networks**
 
    ```bash
-   !python generate.py --outdir=./hasil-output/ada/L1 --trunc=0.7 --seeds=0-10 \
-    --network=./model-trained/model-ada/L1-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/ada/L1 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-ada/L1-network-snapshot-001000.pkl
 
-   !python generate.py --outdir=./hasil-output/ada/L2 --trunc=0.7 --seeds=0-10 \
-      --network=./model-trained/model-ada/L2-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/ada/L2 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-ada/L2-network-snapshot-001000.pkl
 
-   !python generate.py --outdir=./hasil-output/ada/L3 --trunc=0.7 --seeds=0-10 \
-      --network=./model-trained/model-ada/L3-network-snapshot-001000.pkl
+   python generate.py --outdir=./hasil-output/ada/L3 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-ada/L3-network-snapshot-001000.pkl
    ```
 
    **Finetuning + ADA Networks**
 
    ```bash
-   !python generate.py --outdir=./hasil-output/finetuning/L1 --trunc=0.7 --seeds=0-10 \
-    --network=./model-trained/model-finetuning/L1-Finetune-1000.pkl
+   python generate.py --outdir=./hasil-output/finetuning/L1 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-finetuning/L1-Finetune-1000.pkl
 
-   !python generate.py --outdir=./hasil-output/finetuning/L2 --trunc=0.7 --seeds=0-10 \
-      --network=./model-trained/model-finetuning/L2-Finetune-1000.pkl
+   python generate.py --outdir=./hasil-output/finetuning/L2 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-finetuning/L2-Finetune-1000.pkl
 
-   !python generate.py --outdir=./hasil-output/finetuning/L3 --trunc=0.7 --seeds=0-10 \
-      --network=./model-trained/model-finetuning/L3-Finetune-1000.pkl
+   python generate.py --outdir=./hasil-output/finetuning/L3 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-finetuning/L3-Finetune-1000.pkl
    ```
 
 ## 📚 Dokumentasi Tambahan
