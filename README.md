@@ -37,13 +37,13 @@ To run this project, you need:
   - MySQL 8.0
   - [Lainnya...] -->
 
-- Docker Desktop
+- Docker Desktop 🐳
 
 ### Step by Step to Run the Training Process
 
 Follow these steps to set up the environment and start the training process:
 
-1. **Clone Repository**
+1. **Clone Repository 💻**
 
    Clone the project repository to your local machine:
 
@@ -51,7 +51,35 @@ Follow these steps to set up the environment and start the training process:
    git clone https://github.com/Informatics-ITS/ta-yaboidimsum.git
    ```
 
-2. **Login to Docker Account**
+2. **Download Datasets and Models 📦**
+
+   Download the necessary datasets, pretrained models, and trained models from the provided [Google Drive link](https://drive.google.com/drive/folders/1EsdZt3KsHl_-xL8pzHPgAUGfo_7pl2Kx?usp=sharing). Organize the downloaded files into the following directory structure within your project folder:
+
+   ```bash
+   |.
+   ├── dataset/ 📊
+   │   ├── L1-Converted
+   │   ├── L2-converted.zip
+   │   └── L3-Converted
+   ├── model/ 🧠
+   │   └── ffhq-res256-mirror-paper256-noaug.pkl 🤖
+   └── model-trained/ 📂
+      ├── model-ada/ 🤖
+      │   ├── L1-network-snapshot-001000.pkl
+      │   ├── L2-network-snapshot-001000.pkl
+      │   └── L3-network-snapshot-001000.pkl
+      ├── model-finetuning/ 🤖
+      │   ├── L1-Finetune-1000.pkl
+      │   ├── L2-Finetune-1000.pkl
+      │   └── L3-Finetune-1000.pkl
+      └── model-noaug/ 🤖
+         ├── L1-noaug-network-snapshot-001000.pkl
+         ├── L2-noaug-network-snapshot-001000.pkl
+         └── L3-noaug-network-snapshot-001000.pkl
+
+   ```
+
+3. **Log in to Docker 🐳**
 
    Log in to your Docker account via the terminal:
 
@@ -59,7 +87,7 @@ Follow these steps to set up the environment and start the training process:
    docker login
    ```
 
-3. **Build the Docker Image**
+4. **Build the Docker Image 🏗️**
 
    Navigate to your project directory and build the Docker image. Replace `<image_name>` and `<tag>` with appropriate names for your image:
 
@@ -68,7 +96,7 @@ Follow these steps to set up the environment and start the training process:
    docker build -t <image_name>:<tag> .
    ```
 
-4. **Run the Container**
+5. **Run the Container 🏃**
 
    Run the Docker container on a specific port. This command uses docker run to start the container, mount the current directory, and map port 6006 for potential access (e.g., if using TensorBoard).
 
@@ -76,7 +104,7 @@ Follow these steps to set up the environment and start the training process:
    docker run --gpus all --rm -it -v "${PWD}:/stylegan2-ada-pytorch" -p 6006:6006 <your docker image> /bin/sh
    ```
 
-5. **Navigate Inside the Container**
+6. **Navigate Inside the Container 🗺️**
 
    Once inside the container, navigate to the mounted folder. You start in `/workspace` and need to move to the stylegan2-ada-pytorch directory:
 
@@ -85,7 +113,7 @@ Follow these steps to set up the environment and start the training process:
    cd stylegan2-ada-pytorch
    ```
 
-6. **Install Additional Libraries**
+7. **Install Additional Libraries ⚙️**
 
    Install the Optuna library, which is required for hyperparameter tuning:
 
@@ -93,7 +121,7 @@ Follow these steps to set up the environment and start the training process:
    pip install optuna
    ```
 
-7. **Run the Training Process**
+8. **Execute the Training Process 💡**
 
    Use the appropriate command to run the L1, L2, or L3 training process.
 
@@ -115,11 +143,11 @@ Follow these steps to set up the environment and start the training process:
    python train-optuna.py optimize --outdir=./optuna_grid_results --data=./dataset/L3-Converted --resume=./model/ffhq-res256-mirror-paper256-noaug.pkl --gpus=1 --study-name=my_grid_study_L3 --storage=sqlite:///optuna_grid_results/my_grid_L3_study.db --allow-tf32=True --nhwc=True
    ```
 
-### Step by Step to Generate The Images
+### 🖼️ Step-by-Step Guide to Generate Images
 
 After the training is complete, follow these steps to generate images using the trained models.
 
-1. **Identify the location of your completed L1, L2, or L3 trained model.**
+1. **Locate the Trained Model 🔍**
 
    Identify the location of your completed L1, L2, or L3 trained model:
 
@@ -127,9 +155,10 @@ After the training is complete, follow these steps to generate images using the 
    ./model-trained/
    ```
 
-2. **Load Networks and Generate Images**
+2. **Generate Images 🎨**
 
    Load the networks and generate the images using the commands below.
+
 
    **Baseline Networks**
 
