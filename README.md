@@ -190,13 +190,80 @@ After the training is complete, follow these steps to generate images using the 
    python generate.py --outdir=./hasil-output/finetuning/L3 --trunc=0.7 --seeds=0-10 --network=./model-trained/model-finetuning/L3-Finetune-1000.pkl
    ```
 
-## 📚 Dokumentasi Tambahan
+<!-- ## 📚 Dokumentasi Tambahan
 
 - [![Dokumentasi API]](docs/api.md)
 - [![Diagram Arsitektur]](docs/architecture.png)
-- [![Struktur Basis Data]](docs/database_schema.sql)
+- [![Struktur Basis Data]](docs/database_schema.sql) -->
 
----
+## 🌐 Website Visual Turing Test
+
+This section provides instructions for running the website visual Turing test.
+
+1. **Go to the Frontend Folder 📁**
+
+   Navigate to the frontend directory from your command line:
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Install Node Modules 📦**
+
+   Install the necessary node modules for the website. While `npm install` works, we recommend using `pnpm install` for faster installation:
+
+   ```bash
+   npm install
+   # Recommended:
+   pnpm install
+   ```
+
+3. **Run the Website Locally 🚀**
+
+   Start the website development server on your local machine using the following command:
+
+   ```bash
+   npm run dev
+   # Recommended:
+   pnpm run dev
+   ```
+
+## 📊 Classification Metric
+
+This section provides instructions for running the classification metric scripts.
+
+1. **Navigate to the Classification Metric Folder 📁**
+
+   Change your directory to the `classification-metric` folder:
+
+   ```bash
+   cd classification-metric
+   ```
+
+2. **Set Up and Activate the Virtual Environment 🐍**
+
+   Create a Python virtual environment and activate it.
+
+   ```bash
+   # Create the virtual environment (replace <venv_name> with your preferred name)
+   python -m venv <venv_name>
+
+   # Activate the virtual environment
+   # For macOS/Linux:
+   source <venv_name>/bin/activate
+
+   # For Windows (Command Prompt):
+   <venv_name>\Scripts\activate
+
+   # For Windows (PowerShell):
+   <venv_name>\Scripts\Activate.ps1
+   ```
+
+
+3. **Run the Notebook 📖**
+
+   Use the existing virtual environment you've just created! and see it running!
+
 
 ## ✅ Validasi
 
