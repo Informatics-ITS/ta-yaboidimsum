@@ -230,7 +230,25 @@ This section provides instructions for running the website visual Turing test.
 
 ## 📊 Classification Metric
 
-This section provides instructions for running the classification metric scripts.
+This section guides you on running the classification metric. While you can run the notebook locally, we highly recommend using Kaggle Notebooks for this task. Kaggle provides a pre-configured environment with necessary dependencies and often offers GPU access, making it ideal for running these metrics without complex local setup.
+
+**Recommended: Using Kaggle Notebooks 🚀**
+
+1. **Access the Kaggle Notebook 🔗**
+   
+   Open the classification metric notebook directly on Kaggle. Please ensure you select version 14 of the notebook for proper execution:
+   [Kaggle Notebook](https://www.kaggle.com/code/cloudimsss/classification-metrics)
+
+2. **Run the Notebook ▶️**
+
+   Once on the Kaggle page, click on "Copy & Edit" to create your own editable version of the notebook. You can then run all cells sequentially to compute the classification metrics.
+
+**Alternative: Running Locally (Advanced) 💻**
+
+If you prefer to run the classification metric notebook on your local machine, follow these steps:
+
+
+
 
 1. **Navigate to the Classification Metric Folder 📁**
 
@@ -262,7 +280,22 @@ This section provides instructions for running the classification metric scripts
 
 3. **Run the Notebook 📖**
 
-   Use the existing virtual environment you've just created! and see it running!
+   Install `ipykernel` and `notebook` (or jupyterlab) to run the `.ipynb` file within your newly activated virtual environment. Then, launch the notebook environment.
+
+   ```bash
+   # Install ipykernel (to ensure the venv can be used in Jupyter)
+   pip install ipykernel
+
+   # Install notebook/Jupyter
+   pip install notebook
+
+   # OR, if you prefer JupyterLab:
+   # pip install jupyterlab
+
+   # Start the notebook server
+   jupyter notebook
+   ```
+   This command will open the Jupyter interface in your browser, where you can select and run the .ipynb file.
 
 
 ## ✅ Validasi
