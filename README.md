@@ -14,14 +14,14 @@
 
 ## 📺 Demo Aplikasi
 
-Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda):
+<!-- Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda): -->
 
-[![Demo Aplikasi](https://i.ytimg.com/vi/zIfRMTxRaIs/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)  
+[![Demo Aplikasi](./thumbnail-readme.png)](https://www.youtube.com/watch?v=jg2PT2XjFbA)  
 _Klik gambar di atas untuk menonton demo_
 
 ---
 
-_Konten selanjutnya hanya merupakan contoh awalan yang baik. Anda dapat berimprovisasi bila diperlukan._
+<!-- _Konten selanjutnya hanya merupakan contoh awalan yang baik. Anda dapat berimprovisasi bila diperlukan._ -->
 
 ## 🛠 Software Installation & Execution Guide
 
@@ -235,7 +235,7 @@ This section guides you on running the classification metric. While you can run 
 **Recommended: Using Kaggle Notebooks 🚀**
 
 1. **Access the Kaggle Notebook 🔗**
-   
+
    Open the classification metric notebook directly on Kaggle. Please ensure you select version 14 of the notebook for proper execution:
    [Kaggle Notebook](https://www.kaggle.com/code/cloudimsss/classification-metrics)
 
@@ -246,9 +246,6 @@ This section guides you on running the classification metric. While you can run 
 **Alternative: Running Locally (Advanced) 💻**
 
 If you prefer to run the classification metric notebook on your local machine, follow these steps:
-
-
-
 
 1. **Navigate to the Classification Metric Folder 📁**
 
@@ -277,7 +274,6 @@ If you prefer to run the classification metric notebook on your local machine, f
    <venv_name>\Scripts\Activate.ps1
    ```
 
-
 3. **Run the Notebook 📖**
 
    Install `ipykernel` and `notebook` (or jupyterlab) to run the `.ipynb` file within your newly activated virtual environment. Then, launch the notebook environment.
@@ -295,8 +291,8 @@ If you prefer to run the classification metric notebook on your local machine, f
    # Start the notebook server
    jupyter notebook
    ```
-   This command will open the Jupyter interface in your browser, where you can select and run the .ipynb file.
 
+   This command will open the Jupyter interface in your browser, where you can select and run the .ipynb file.
 
 ## ✅ Validasi
 
@@ -314,4 +310,4 @@ Pastikan proyek memenuhi kriteria berikut sebelum submit:
 Hubungi:
 
 - Penulis: [dprihadisetiawan@gmail.com]
-- Pembimbing Utama: [email@pembimbing]
+<!-- - Pembimbing Utama: [email@pembimbing] -->
