@@ -16,7 +16,7 @@
 
 <!-- Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda): -->
 
-[![Demo Aplikasi](./thumbnail-readme.png)](https://www.youtube.com/watch?v=jg2PT2XjFbA)  
+[![Demo Aplikasi](./thumbnail.png)](https://www.youtube.com/watch?v=jg2PT2XjFbA)  
 _Klik gambar di atas untuk menonton demo_
 
 ---
